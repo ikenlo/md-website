@@ -8,7 +8,26 @@
   <meta name="description" content="M&D beauty salon — професійний догляд за волоссям та красою. Онлайн-запис на стрижки, фарбування, укладання, манікюр.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    /* Шрифти. DEFAULT — обраний набір; ?font=classic|fashion|minimal|elegant|old — попередній перегляд інших. */
+    (function () {
+      var DEFAULT = "classic";
+      var SETS = {
+        old: "Montserrat:wght@300;400;500;600",
+        classic: "Playfair+Display:wght@400;500&family=Manrope:wght@300;400;500;600",
+        fashion: "Prata&family=Jost:wght@300;400;500;600",
+        minimal: "Tenor+Sans&family=Manrope:wght@300;400;500;600",
+        elegant: "Noto+Serif+Display:wght@300;400&family=Onest:wght@300;400;500;600"
+      };
+      var k = (location.search.match(/[?&]font=(\w+)/) || [])[1];
+      if (!SETS[k]) k = DEFAULT;
+      if (k !== "old") document.documentElement.setAttribute("data-font", k);
+      var l = document.createElement("link");
+      l.rel = "stylesheet";
+      l.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=" + SETS[k] + "&display=swap";
+      document.head.appendChild(l);
+    })();
+  </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
