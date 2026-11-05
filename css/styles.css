@@ -190,7 +190,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 /* ---------- team ---------- */
 .master { background: var(--card); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; }
 .master__photo { aspect-ratio: 4 / 5; background: radial-gradient(80% 60% at 50% 30%, #2b4238, #142019); display: grid; place-items: center; font: 500 72px var(--serif); color: var(--gold); }
-.master__photo img { width: 100%; height: 100%; object-fit: cover; }
+.master__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; }
 .master__body { padding: 16px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .master__name { font: 500 24px/1.1 var(--serif); }
 .master__role { font-size: 13px; color: var(--gold); }

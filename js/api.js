@@ -68,8 +68,8 @@
   ];
   const byCat = (...cats) => SERVICES.filter((s) => cats.includes(s.categoryId)).map((s) => s.id);
   const MASTERS = [
-    { id: "m1", name: "Марина", role: "Топ-стиліст", about: "12 років досвіду. Складні стрижки та вечірні образи.", photo: null, serviceIds: byCat("women", "styling", "care") },
-    { id: "m2", name: "Дмитро", role: "Барбер", about: "Класичні та сучасні чоловічі стрижки, оформлення бороди.", photo: null, serviceIds: byCat("men") },
+    { id: "m1", name: "Марина", role: "Топ-стиліст", about: "12 років досвіду. Складні стрижки та вечірні образи.", photo: "assets/img/team/m1.jpg", serviceIds: byCat("women", "styling", "care") },
+    { id: "m2", name: "Дмитро", role: "Барбер", about: "Класичні та сучасні чоловічі стрижки, оформлення бороди.", photo: "assets/img/team/m2.jpg", serviceIds: byCat("men") },
     { id: "m3", name: "Ольга", role: "Колорист", about: "Airtouch, балаяж, складне фарбування і догляд.", photo: null, serviceIds: byCat("color", "care", "women") },
     { id: "m4", name: "Анна", role: "Майстер манікюру", about: "Естетичний манікюр і стійке покриття.", photo: null, serviceIds: byCat("nails") },
   ];
