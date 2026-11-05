@@ -27,15 +27,26 @@
 ### `GET /services`
 ```json
 [{ "id": "s1", "categoryId": "women", "name": "Жіноча стрижка",
-   "duration": 60, "priceFrom": 400, "popular": true }]
+   "duration": 60, "priceFrom": 400,
+   "prices": [
+     { "id": "short",  "label": "Коротке", "price": 400 },
+     { "id": "medium", "label": "Середнє", "price": 500 },
+     { "id": "long",   "label": "Довге",   "price": 600 }
+   ] }]
 ```
-`duration` — хвилини. `popular: true` — показується в блоці «Популярні послуги».
+`duration` — хвилини. `priceFrom` — мінімальна ціна.
+`prices` — необов'язково: варіанти ціни (напр. за довжиною волосся). Якщо є — у прайсі показуються
+три ціни, а при записі клієнт обирає варіант (`variantId` у `POST /bookings`).
 
-### `GET /masters?serviceId=s1`
-Майстри, які виконують послугу.
+### `GET /masters` та `GET /masters?serviceId=s1`
+Без параметра — уся команда (блок «Наші майстри»), з `serviceId` — ті, хто виконує послугу.
 ```json
-[{ "id": "m1", "name": "Марина", "role": "Топ-стиліст", "photo": "https://…/m1.jpg" }]
+[{ "id": "m1", "name": "Марина", "role": "Топ-стиліст",
+   "about": "12 років досвіду. Складні стрижки та вечірні образи.",
+   "photo": "https://…/m1.jpg",
+   "serviceIds": ["s1", "s2", "s7"] }]
 ```
+`serviceIds` потрібні для кнопки «Записатись» у картці майстра — сайт покаже лише його послуги.
 
 ### `GET /availability/days?serviceId=s1&masterId=m1&from=2026-11-05&to=2026-11-30`
 Кількість вільних віконець по днях (для календаря). `masterId` може бути відсутній =
@@ -58,6 +69,7 @@
 {
   "salonId": "md-kyiv-1",
   "serviceId": "s1",
+  "variantId": "long",
   "masterId": "m1",
   "date": "2026-11-05",
   "time": "09:30",

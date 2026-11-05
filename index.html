@@ -2,9 +2,10 @@
 <html lang="uk">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1512">
   <title>M&amp;D beauty salon — салон краси у Києві</title>
-  <meta name="description" content="M&D beauty salon — професійний догляд за вашим волоссям та красою. Онлайн-запис на стрижки, фарбування, укладання, манікюр.">
+  <meta name="description" content="M&D beauty salon — професійний догляд за волоссям та красою. Онлайн-запис на стрижки, фарбування, укладання, манікюр.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,148 +16,165 @@
 <!-- ============ HEADER ============ -->
 <header class="header" id="top">
   <div class="container header__inner">
-    <a href="#top" class="logo" aria-label="M&D beauty salon">
+    <a href="#top" class="logo" aria-label="M&D beauty salon — на початок">
       <span class="logo__mark">M<span>&amp;</span>D</span>
       <span class="logo__sub">beauty salon</span>
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Головне меню">
       <a href="#services">Послуги</a>
+      <a href="#team">Майстри</a>
       <a href="#prices">Прайс</a>
-      <a href="#about">Про нас</a>
-      <a href="#gallery">Галерея</a>
+      <a href="#works">Роботи</a>
+      <a href="#faq">Питання</a>
       <a href="#contacts">Контакти</a>
-      <a href="#booking" class="nav__book">Записатись</a>
+      <div class="nav__extra">
+        <a href="#booking" class="btn btn--gold btn--block">Записатись онлайн</a>
+        <a href="tel:+380971234567" class="nav__phone">+38 (097) 123 45 67</a>
+      </div>
     </nav>
-    <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn btn--outline btn--sm header__ig">
-      <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg>
-      Instagram
-    </a>
-    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a href="#booking" class="btn btn--outline btn--sm header__cta">Записатись</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__photo" aria-hidden="true"></div>
   <div class="container hero__inner">
-    <div class="hero__text">
-      <p class="eyebrow">Краса <i>•</i> Стиль <i>•</i> Турбота</p>
-      <h1 class="hero__title"><span class="gold">M&amp;D</span><span class="gold hero__title-sub">beauty salon</span></h1>
-      <p class="hero__lead">Професійний догляд за вашим волоссям та красою</p>
+    <p class="eyebrow">Краса <i>•</i> Стиль <i>•</i> Турбота</p>
+    <h1 class="hero__title"><span class="gold">M&amp;D</span><span class="gold hero__title-sub">beauty salon</span></h1>
+    <p class="hero__lead">Професійний догляд за вашим волоссям та красою</p>
+    <div class="hero__actions">
       <a href="#booking" class="btn btn--gold">Записатись онлайн <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#prices" class="btn btn--ghost-light">Ціни</a>
     </div>
-  </div>
-
-  <div class="container">
-    <ul class="features" id="services">
-      <li><a href="#booking" data-category="women">
-        <svg viewBox="0 0 48 48"><circle cx="13" cy="36" r="5"/><circle cx="35" cy="36" r="5"/><path d="M16 32 34 8M32 32 14 8"/></svg>
-        <span>Жіночі<br>стрижки</span></a></li>
-      <li><a href="#booking" data-category="men">
-        <svg viewBox="0 0 48 48"><path d="M14 20c0-8 4-13 10-13s10 5 10 13"/><path d="M14 20v4c0 7 4 14 10 14s10-7 10-14v-4"/><path d="M15 27c2 4 5 6 9 6s7-2 9-6"/><path d="M14 18c4-3 8-4 13-2 3 1 5 0 7-2"/></svg>
-        <span>Чоловічі<br>стрижки</span></a></li>
-      <li><a href="#booking" data-category="color">
-        <svg viewBox="0 0 48 48"><path d="M40 6 22 26"/><path d="M22 26c-3-1-6 0-7 3-1 4-2 7-7 11 7 0 12-2 14-5 2-3 2-6 0-9Z"/></svg>
-        <span>Фарбування<br>та колорування</span></a></li>
-      <li><a href="#booking" data-category="styling">
-        <svg viewBox="0 0 48 48"><path d="M8 14a10 10 0 0 1 10-8h12v16H18A10 10 0 0 1 8 14Z"/><circle cx="18" cy="14" r="3"/><path d="M30 10h4M30 18h4M36 8l4-2M36 14h5M36 20l4 2"/><path d="M16 22l-2 14h6l2-14M14 36v6h6v-6"/></svg>
-        <span>Укладання<br>та зачіски</span></a></li>
-      <li><a href="#booking" data-category="care">
-        <svg viewBox="0 0 48 48"><path d="M24 36c-4-4-6-9-6-14 0-5 3-10 6-12 3 2 6 7 6 12 0 5-2 10-6 14Z"/><path d="M24 36c-6 0-12-3-15-10 4-2 9-1 12 1M24 36c6 0 12-3 15-10-4-2-9-1-12 1"/><path d="M24 36c-7 2-14 0-18-5M24 36c7 2 14 0 18-5"/></svg>
-        <span>Догляд<br>за волоссям</span></a></li>
-      <li><a href="#booking" data-category="nails">
-        <svg viewBox="0 0 48 48"><path d="M20 42V18c0-6 2-11 6-11s6 5 6 11v24"/><path d="M22 18c0-4 2-7 4-7s4 3 4 7v4h-8v-4Z"/></svg>
-        <span>Манікюр</span></a></li>
+    <ul class="hero__facts">
+      <li><b>8+</b><span>років досвіду</span></li>
+      <li><b>4.9</b><span>рейтинг Google</span></li>
+      <li><b>24/7</b><span>онлайн-запис</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ SERVICES (cream) ============ -->
+<section class="section section--light" id="services">
+  <div class="container">
+    <p class="eyebrow eyebrow--dot">Послуги</p>
+    <h2 class="h2">Індивідуальний підхід<br>до вашої краси</h2>
+    <div class="svc-grid" id="svcGrid">
+      <!-- фото: покладіть файли в assets/img/services/ з такими іменами -->
+      <a href="#booking" class="svc" data-category="women" data-photo="assets/img/services/women.jpg|assets/img/hero.jpg">
+        <span class="svc__label">(Жіночі стрижки)</span><span class="svc__price" data-from="women"></span></a>
+      <a href="#booking" class="svc" data-category="men" data-photo="assets/img/services/men.jpg">
+        <svg class="svc__ico" viewBox="0 0 48 48"><path d="M14 20c0-8 4-13 10-13s10 5 10 13"/><path d="M14 20v4c0 7 4 14 10 14s10-7 10-14v-4"/><path d="M15 27c2 4 5 6 9 6s7-2 9-6"/></svg>
+        <span class="svc__label">(Чоловічі стрижки)</span><span class="svc__price" data-from="men"></span></a>
+      <a href="#booking" class="svc" data-category="color" data-photo="assets/img/services/color.jpg">
+        <svg class="svc__ico" viewBox="0 0 48 48"><path d="M40 6 22 26"/><path d="M22 26c-3-1-6 0-7 3-1 4-2 7-7 11 7 0 12-2 14-5 2-3 2-6 0-9Z"/></svg>
+        <span class="svc__label">(Фарбування)</span><span class="svc__price" data-from="color"></span></a>
+      <a href="#booking" class="svc" data-category="styling" data-photo="assets/img/services/styling.jpg">
+        <svg class="svc__ico" viewBox="0 0 48 48"><path d="M8 14a10 10 0 0 1 10-8h12v16H18A10 10 0 0 1 8 14Z"/><circle cx="18" cy="14" r="3"/><path d="M30 10h4M30 18h4M36 8l4-2M36 14h5M36 20l4 2M16 22l-2 14h6l2-14"/></svg>
+        <span class="svc__label">(Укладання)</span><span class="svc__price" data-from="styling"></span></a>
+      <a href="#booking" class="svc" data-category="care" data-photo="assets/img/services/care.jpg">
+        <svg class="svc__ico" viewBox="0 0 48 48"><path d="M24 36c-4-4-6-9-6-14 0-5 3-10 6-12 3 2 6 7 6 12 0 5-2 10-6 14Z"/><path d="M24 36c-6 0-12-3-15-10 4-2 9-1 12 1M24 36c6 0 12-3 15-10-4-2-9-1-12 1"/></svg>
+        <span class="svc__label">(Догляд)</span><span class="svc__price" data-from="care"></span></a>
+      <a href="#booking" class="svc" data-category="nails" data-photo="assets/img/services/nails.jpg">
+        <svg class="svc__ico" viewBox="0 0 48 48"><path d="M20 42V18c0-6 2-11 6-11s6 5 6 11v24"/><path d="M22 18c0-4 2-7 4-7s4 3 4 7v4h-8v-4Z"/></svg>
+        <span class="svc__label">(Манікюр)</span><span class="svc__price" data-from="nails"></span></a>
+    </div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="about__photo"><img src="assets/img/interior.jpg" alt="Інтер'єр салону M&D" loading="lazy"></div>
-  <div class="about__body">
+  <div class="container about__body">
     <p class="eyebrow eyebrow--line">Про нас</p>
-    <h2 class="h2">Більше, ніж просто<br>перукарня</h2>
-    <p>M&amp;D beauty salon — це простір, де ви відчуєте турботу, отримаєте професійний сервіс і підкреслите свою індивідуальність.</p>
-    <ul class="checks">
-      <li>Досвідчені майстри</li>
-      <li>Сучасні техніки та якісні матеріали</li>
-      <li>Комфортна атмосфера</li>
+    <h2 class="h2">Більше, ніж просто перукарня</h2>
+    <p class="muted-light">M&amp;D beauty salon — простір, де ви відчуєте турботу, отримаєте професійний сервіс і підкреслите свою індивідуальність.</p>
+    <ul class="perks">
+      <li><svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="5"/><path d="M6 27c1-6 5-9 10-9s9 3 10 9"/></svg><b>Досвідчені майстри</b><span>Регулярне навчання і сертифікації</span></li>
+      <li><svg viewBox="0 0 32 32"><path d="M11 4h10v5l4 6v13H7V15l4-6Z"/><path d="M7 18h18"/></svg><b>Преміальна косметика</b><span>Працюємо на професійних брендах</span></li>
+      <li><svg viewBox="0 0 32 32"><path d="M16 4 6 8v8c0 6 4 10 10 12 6-2 10-6 10-12V8Z"/><path d="m11 16 4 4 7-7"/></svg><b>Стерильність</b><span>Інструменти проходять повну обробку</span></li>
+      <li><svg viewBox="0 0 32 32"><path d="M6 13h18v6a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8Z"/><path d="M24 15h2a3 3 0 0 1 0 6h-2M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></svg><b>Атмосфера</b><span>Кава, чай і час лише для себе</span></li>
     </ul>
-    <a href="#gallery" class="btn btn--outline">Дізнатись більше <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
-  <div class="about__leaves" aria-hidden="true"></div>
 </section>
 
-<!-- ============ PRICES ============ -->
-<section class="prices" id="prices">
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
   <div class="container">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Приклад прайсу</p>
-        <h2 class="h2">Популярні послуги</h2>
+        <p class="eyebrow eyebrow--dot">Команда</p>
+        <h2 class="h2">Наші майстри</h2>
       </div>
-      <button class="link-arrow" id="fullPriceBtn">Повний прайс <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="scroll-btns" data-scroll="teamList">
+        <button type="button" aria-label="Назад" data-dir="-1">‹</button><button type="button" aria-label="Вперед" data-dir="1">›</button>
+      </div>
     </div>
-    <div class="price-cards" id="priceCards"><!-- js --></div>
-    <div class="price-full" id="priceFull" hidden><!-- js --></div>
+  </div>
+  <div class="hscroll" id="teamList"><!-- js --></div>
+</section>
+
+<!-- ============ PRICES (cream) ============ -->
+<section class="section section--light" id="prices">
+  <div class="container">
+    <p class="eyebrow eyebrow--dot">Прайс</p>
+    <h2 class="h2">Вартість послуг</h2>
+    <p class="note">Ціна на послуги для волосся залежить від довжини: <b>коротке</b> — до плечей, <b>середнє</b> — до лопаток, <b>довге</b> — нижче лопаток.</p>
+    <div class="price-acc" id="priceAcc"><!-- js --></div>
   </div>
 </section>
 
 <!-- ============ BOOKING ============ -->
 <section class="booking" id="booking">
   <div class="container">
-    <div class="section-head section-head--center">
-      <div>
-        <p class="eyebrow">Онлайн-запис</p>
-        <h2 class="h2">Оберіть зручний час</h2>
-        <p class="muted">Розклад синхронізується з <b>MDs connect</b> — ви бачите лише реально вільні віконця.</p>
-      </div>
-    </div>
+    <p class="eyebrow eyebrow--dot">Онлайн-запис</p>
+    <h2 class="h2">Оберіть зручний час</h2>
+    <p class="muted-light booking__lead">Розклад синхронізується з <b>MDs connect</b> — ви бачите лише реально вільні віконця.</p>
 
     <div class="booking__card">
       <ol class="steps" id="steps">
         <li class="is-active" data-step="1"><b>1</b><span>Послуга</span></li>
         <li data-step="2"><b>2</b><span>Майстер</span></li>
-        <li data-step="3"><b>3</b><span>Дата і час</span></li>
+        <li data-step="3"><b>3</b><span>Час</span></li>
         <li data-step="4"><b>4</b><span>Контакти</span></li>
       </ol>
+      <p class="step-title" id="stepTitle">Оберіть послугу</p>
 
-      <!-- step 1 -->
+      <div class="preset" id="presetMaster" hidden></div>
+
       <div class="step-pane is-active" data-pane="1">
         <div class="chips" id="categoryChips"></div>
-        <div class="service-list" id="serviceList"></div>
+        <div class="option-list" id="serviceList"></div>
       </div>
 
-      <!-- step 2 -->
       <div class="step-pane" data-pane="2">
-        <div class="master-list" id="masterList"></div>
+        <div class="option-list" id="masterList"></div>
       </div>
 
-      <!-- step 3 -->
       <div class="step-pane" data-pane="3">
         <div class="schedule">
           <div class="calendar" id="calendar"></div>
-          <div class="slots">
+          <div class="slots" id="slots">
             <p class="slots__title" id="slotsTitle">Оберіть дату</p>
             <div class="slots__grid" id="slotsGrid"></div>
-            <div class="legend">
-              <span><i class="dot dot--free"></i>Вільно</span>
-              <span><i class="dot dot--busy"></i>Зайнято</span>
-            </div>
+            <div class="legend"><span><i class="dot dot--free"></i>Вільно</span><span><i class="dot dot--busy"></i>Зайнято</span></div>
           </div>
         </div>
       </div>
 
-      <!-- step 4 -->
       <div class="step-pane" data-pane="4">
         <div class="confirm">
           <div class="summary" id="summary"></div>
           <form class="form" id="bookingForm" novalidate>
+            <label id="variantField" hidden>Довжина волосся
+              <select name="variant" id="variantSelect"></select>
+            </label>
             <label>Ваше ім'я<input name="name" required autocomplete="name" placeholder="Олена"></label>
-            <label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+38 (0__) ___ __ __"></label>
-            <label>Коментар <small>(необов'язково)</small><textarea name="comment" rows="3" placeholder="Побажання до майстра"></textarea></label>
+            <label>Телефон<input name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __"></label>
+            <label>Коментар <small>(необов'язково)</small><textarea name="comment" rows="2" placeholder="Побажання до майстра"></textarea></label>
             <label class="agree"><input type="checkbox" name="agree" required> Погоджуюсь на обробку персональних даних</label>
             <p class="form__error" id="formError" role="alert"></p>
             <button class="btn btn--gold btn--block" type="submit" id="submitBtn">Підтвердити запис</button>
@@ -164,18 +182,17 @@
         </div>
       </div>
 
-      <!-- success -->
       <div class="step-pane" data-pane="done">
         <div class="success">
           <div class="success__icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><path d="m15 24 6 6 12-12"/></svg></div>
           <h3 class="h3">Дякуємо! Ви записані</h3>
           <p id="successText"></p>
-          <button class="btn btn--outline" id="restartBtn">Новий запис</button>
+          <button class="btn btn--outline" id="restartBtn" type="button">Новий запис</button>
         </div>
       </div>
 
       <div class="booking__nav">
-        <button class="btn btn--ghost" id="backBtn" hidden>
+        <button class="btn btn--text" id="backBtn" type="button" hidden>
           <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Назад
         </button>
         <span class="api-status" id="apiStatus"></span>
@@ -184,59 +201,124 @@
   </div>
 </section>
 
-<!-- ============ GALLERY ============ -->
-<section class="gallery" id="gallery">
+<!-- ============ WORKS (cream) ============ -->
+<section class="section section--light" id="works">
   <div class="container">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Галерея</p>
-        <h2 class="h2">Наші роботи та простір</h2>
+        <p class="eyebrow eyebrow--dot">Портфоліо</p>
+        <h2 class="h2">Наші роботи</h2>
       </div>
-      <a class="link-arrow" href="https://instagram.com/" target="_blank" rel="noopener">Більше в Instagram <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="link-arrow" href="https://instagram.com/" target="_blank" rel="noopener">Instagram <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="gallery__grid">
-      <figure class="g-big"><img src="assets/img/hero.jpg" alt="Укладання хвилі" loading="lazy"></figure>
-      <figure><img src="assets/img/interior.jpg" alt="Робочі місця майстрів" loading="lazy"></figure>
-      <figure class="g-ph"><span>Фото роботи</span></figure>
-      <figure class="g-ph"><span>Фото роботи</span></figure>
+    <div class="works">
+      <figure class="w-tall"><img src="assets/img/hero.jpg" alt="Об'ємне укладання хвилі" loading="lazy"><figcaption>Укладання</figcaption></figure>
+      <figure><img src="assets/img/interior.jpg" alt="Зал салону" loading="lazy"><figcaption>Наш простір</figcaption></figure>
+      <figure class="ph"><span>Фото роботи</span></figure>
+      <figure class="ph"><span>Фото роботи</span></figure>
       <figure><img src="assets/img/leaves.jpg" alt="Деталі інтер'єру" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATE ============ -->
+<section class="cert">
+  <div class="container cert__inner">
+    <div class="cert__card" aria-hidden="true">
+      <span class="logo__mark">M<span>&amp;</span>D</span>
+      <span class="cert__card-sub">gift certificate</span>
+      <span class="cert__card-sum">2 000 ₴</span>
+    </div>
+    <div class="cert__text">
+      <p class="eyebrow eyebrow--dot">Сертифікати</p>
+      <h2 class="h2">Подарунок, який запам'ятається</h2>
+      <p class="muted-light">Номінали 1000, 2000, 5000 ₴ або будь-яка сума. Діє 6 місяців на всі послуги салону.</p>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn--outline">Замовити сертифікат</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--dot">Відгуки</p>
+        <h2 class="h2">Що кажуть клієнти</h2>
+      </div>
+      <div class="scroll-btns" data-scroll="reviewList">
+        <button type="button" aria-label="Назад" data-dir="-1">‹</button><button type="button" aria-label="Вперед" data-dir="1">›</button>
+      </div>
+    </div>
+  </div>
+  <div class="hscroll" id="reviewList"><!-- js --></div>
+  <div class="container"><a class="link-arrow reviews__all" href="https://maps.google.com/" target="_blank" rel="noopener">Усі відгуки в Google <svg class="ico ico--arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- ============ FAQ (cream) ============ -->
+<section class="section section--light" id="faq">
+  <div class="container container--narrow">
+    <p class="eyebrow eyebrow--dot">FAQ</p>
+    <h2 class="h2">Відповідаємо на питання</h2>
+    <div class="faq">
+      <details><summary>Як записатись на процедуру?</summary><p>Оберіть послугу, майстра та вільний час у блоці «Онлайн-запис» — це займає хвилину. Або зателефонуйте нам, і адміністратор усе підбере.</p></details>
+      <details><summary>Чи можна перенести або скасувати запис?</summary><p>Так, зателефонуйте або напишіть у Telegram щонайменше за 3 години до візиту — і ми перенесемо запис на інший зручний час.</p></details>
+      <details><summary>Скільки триває процедура?</summary><p>Тривалість вказана біля кожної послуги під час запису. Стрижка — близько години, складне фарбування — до 4–5 годин.</p></details>
+      <details><summary>Як визначити довжину волосся для прайсу?</summary><p>Коротке — до плечей, середнє — до лопаток, довге — нижче лопаток. Остаточну вартість майстер погодить з вами до початку роботи.</p></details>
+      <details><summary>Чи можна оплатити карткою?</summary><p>Так, приймаємо готівку, картки та Apple / Google Pay.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTS ============ -->
+<section class="contacts" id="contacts">
+  <div class="container contacts__inner">
+    <div class="contacts__info">
+      <p class="eyebrow eyebrow--dot">Контакти</p>
+      <h2 class="h2">Чекаємо на вас</h2>
+      <ul class="contacts__list">
+        <li><svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-13a7 7 0 1 0-14 0c0 5.8 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span>м. Київ, вул. Прикладна, 1<br><a class="link-arrow" href="https://maps.google.com/?q=Київ" target="_blank" rel="noopener">Прокласти маршрут</a></span></li>
+        <li><svg class="ico ico--lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Пн–Сб: 9:00 – 20:00<br>Нд: 10:00 – 18:00</span></li>
+        <li><svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          <a href="tel:+380971234567">+38 (097) 123 45 67</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg></a>
+        <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico" viewBox="0 0 24 24"><path d="m21 4-18 7 6 2 2 6 3-4 5 4Z"/><path d="m9 13 8-6"/></svg></a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Карта: M&D beauty salon" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%D0%9A%D0%B8%D1%97%D0%B2%20%D0%A5%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA&output=embed"></iframe>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ============ CONTACTS ============ -->
-<section class="contacts" id="contacts">
-  <div class="container contacts__inner">
-    <div class="contacts__item">
-      <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-13a7 7 0 1 0-14 0c0 5.8 7 13 7 13Z" class="fill"/><circle cx="12" cy="9" r="2.5" class="hole"/></svg>
-      <span>м. Київ,<br>вул. Прикладна, 1</span>
-    </div>
-    <div class="contacts__item">
-      <svg class="ico ico--lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <span>Пн–Сб: 9:00 – 20:00<br>Нд: 10:00 – 18:00</span>
-    </div>
-    <a href="tel:+380971234567" class="btn btn--gold btn--phone">
-      <svg class="ico" viewBox="0 0 24 24"><path class="fill" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-      +38 (097) 123 45 67
-    </a>
-    <div class="contacts__social">
-      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico ico--lg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg></a>
-      <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico ico--lg" viewBox="0 0 24 24"><path class="fill" d="M21.5 3.5 2.8 10.7c-1.2.5-1.2 1.2 0 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.8c.3-1.3-.5-1.9-1.6-1.4ZM9 13.4l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L9 13.4Z"/></svg></a>
-    </div>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="container footer__inner">
-    <a href="#top" class="logo logo--sm"><span class="logo__mark">M<span>&amp;</span>D</span><span class="logo__sub">beauty salon</span></a>
+    <nav class="footer__nav">
+      <a href="#services">Послуги</a><a href="#team">Майстри</a><a href="#prices">Прайс</a><a href="#booking">Запис</a><a href="#faq">FAQ</a>
+    </nav>
     <p class="footer__motto">Твоя краса — наша справа ♡</p>
+    <div class="footer__mark" aria-hidden="true">M&amp;D</div>
     <p class="footer__copy">© <span id="year"></span> M&amp;D beauty salon</p>
   </div>
 </footer>
 
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="tel:+380971234567" class="sticky-cta__call" aria-label="Зателефонувати">
+    <svg class="ico" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+  </a>
+  <a href="#booking" class="btn btn--gold sticky-cta__book">Записатись онлайн</a>
+</div>
+
 <script src="js/config.js"></script>
 <script src="js/api.js"></script>
+<script src="js/content.js"></script>
 <script src="js/booking.js"></script>
 <script src="js/main.js"></script>
 </body>

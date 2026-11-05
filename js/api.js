@@ -36,7 +36,7 @@
   const realApi = {
     getCategories: () => request("/categories"),
     getServices: () => request("/services"),
-    getMasters: (serviceId) => request("/masters?" + qs({ serviceId })),
+    getMasters: (serviceId) => request("/masters" + (serviceId ? "?" + qs({ serviceId }) : "")),
     getDays: (p) => request("/availability/days?" + qs(p)),
     getSlots: (p) => request("/availability/slots?" + qs(p)),
     createBooking: (body) => request("/bookings", { method: "POST", body: JSON.stringify(body) }),
@@ -51,24 +51,27 @@
     { id: "care", name: "Догляд" },
     { id: "nails", name: "Манікюр" },
   ];
+  // prices — варіанти ціни (напр. за довжиною волосся). priceFrom = мінімальна.
+  const HAIR = (a, b, c) => [{ id: "short", label: "Коротке", price: a }, { id: "medium", label: "Середнє", price: b }, { id: "long", label: "Довге", price: c }];
   const SERVICES = [
-    { id: "s1", categoryId: "women", name: "Жіноча стрижка", duration: 60, priceFrom: 400, popular: true },
+    { id: "s1", categoryId: "women", name: "Жіноча стрижка", duration: 60, priceFrom: 400, prices: HAIR(400, 500, 600), popular: true },
     { id: "s2", categoryId: "women", name: "Стрижка кінчиків", duration: 30, priceFrom: 300 },
     { id: "s3", categoryId: "men", name: "Чоловіча стрижка", duration: 45, priceFrom: 450, popular: true },
     { id: "s4", categoryId: "men", name: "Стрижка + борода", duration: 60, priceFrom: 650 },
-    { id: "s5", categoryId: "color", name: "Фарбування", duration: 120, priceFrom: 800, popular: true },
-    { id: "s6", categoryId: "color", name: "Airtouch / балаяж", duration: 240, priceFrom: 2500 },
-    { id: "s7", categoryId: "styling", name: "Укладання", duration: 60, priceFrom: 600, popular: true },
+    { id: "s5", categoryId: "color", name: "Фарбування в один тон", duration: 120, priceFrom: 800, prices: HAIR(800, 1100, 1400), popular: true },
+    { id: "s6", categoryId: "color", name: "Airtouch / балаяж", duration: 240, priceFrom: 2500, prices: HAIR(2500, 3200, 4000) },
+    { id: "s7", categoryId: "styling", name: "Укладання", duration: 60, priceFrom: 600, prices: HAIR(600, 750, 900), popular: true },
     { id: "s8", categoryId: "styling", name: "Вечірня зачіска", duration: 90, priceFrom: 1200 },
-    { id: "s9", categoryId: "care", name: "Відновлення волосся", duration: 60, priceFrom: 900 },
+    { id: "s9", categoryId: "care", name: "Відновлення волосся", duration: 60, priceFrom: 900, prices: HAIR(900, 1100, 1300) },
     { id: "s10", categoryId: "nails", name: "Манікюр", duration: 60, priceFrom: 500, popular: true },
     { id: "s11", categoryId: "nails", name: "Манікюр + покриття", duration: 90, priceFrom: 750 },
   ];
+  const byCat = (...cats) => SERVICES.filter((s) => cats.includes(s.categoryId)).map((s) => s.id);
   const MASTERS = [
-    { id: "m1", name: "Марина", role: "Топ-стиліст", categories: ["women", "color", "styling", "care"] },
-    { id: "m2", name: "Дмитро", role: "Барбер", categories: ["men"] },
-    { id: "m3", name: "Ольга", role: "Колорист", categories: ["color", "care", "women"] },
-    { id: "m4", name: "Анна", role: "Майстер манікюру", categories: ["nails"] },
+    { id: "m1", name: "Марина", role: "Топ-стиліст", about: "12 років досвіду. Складні стрижки та вечірні образи.", photo: null, serviceIds: byCat("women", "styling", "care") },
+    { id: "m2", name: "Дмитро", role: "Барбер", about: "Класичні та сучасні чоловічі стрижки, оформлення бороди.", photo: null, serviceIds: byCat("men") },
+    { id: "m3", name: "Ольга", role: "Колорист", about: "Airtouch, балаяж, складне фарбування і догляд.", photo: null, serviceIds: byCat("color", "care", "women") },
+    { id: "m4", name: "Анна", role: "Майстер манікюру", about: "Естетичний манікюр і стійке покриття.", photo: null, serviceIds: byCat("nails") },
   ];
   const STORE_KEY = "md_mock_bookings";
   const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -108,8 +111,7 @@
     async getServices() { await delay(200); return SERVICES; },
     async getMasters(serviceId) {
       await delay();
-      const s = SERVICES.find((x) => x.id === serviceId);
-      return MASTERS.filter((m) => !s || m.categories.includes(s.categoryId)).map(({ categories, ...m }) => m);
+      return MASTERS.filter((m) => !serviceId || m.serviceIds.includes(serviceId));
     },
     async getDays({ serviceId, masterId, from, to }) {
       await delay();
