@@ -23,24 +23,18 @@
 
   --busy: #333a37;
   --danger: #e58b7a;
-  --logo: "Cormorant Garamond", "Times New Roman", serif;   /* лише логотип M&D */
-  --serif: "Cormorant Garamond", "Times New Roman", serif;  /* заголовки */
-  --sans: "Montserrat", system-ui, sans-serif;               /* текст */
-  --hs: 1;          /* масштаб заголовків під конкретний шрифт */
-  --hw: 500;        /* вага заголовків */
-  --hw-b: 600;      /* вага цін / акцентів */
-  --h-track: -.01em;
+  --logo: "Cormorant Garamond", "Times New Roman", serif;  /* лише логотип M&D */
+  --serif: "Tenor Sans", system-ui, sans-serif;            /* заголовки (назва змінної історична) */
+  --sans: "Manrope", system-ui, sans-serif;                /* текст */
+  --hs: .8;         /* масштаб заголовків під Tenor Sans */
+  --hw: 400;        /* Tenor Sans має лише 400 */
+  --hw-b: 400;
+  --h-track: .01em;
   --r: 16px;
   --gutter: 16px;
   --header-h: 60px;
   --cta-h: 76px;
 }
-
-/* ---------- набори шрифтів (html[data-font]) ---------- */
-html[data-font="classic"] { --serif: "Playfair Display", Georgia, serif; --sans: "Manrope", system-ui, sans-serif; --hs: .84; --hw: 400; --hw-b: 500; --h-track: -.01em; }
-html[data-font="fashion"] { --serif: "Prata", Georgia, serif; --sans: "Jost", system-ui, sans-serif; --hs: .82; --hw: 400; --hw-b: 400; --h-track: 0; }
-html[data-font="minimal"] { --serif: "Tenor Sans", system-ui, sans-serif; --sans: "Manrope", system-ui, sans-serif; --hs: .8; --hw: 400; --hw-b: 400; --h-track: .01em; }
-html[data-font="elegant"] { --serif: "Noto Serif Display", Georgia, serif; --sans: "Onest", system-ui, sans-serif; --hs: .9; --hw: 300; --hw-b: 400; --h-track: -.015em; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
